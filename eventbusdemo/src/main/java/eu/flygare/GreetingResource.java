@@ -1,5 +1,8 @@
 package eu.flygare;
 
+import io.vertx.core.eventbus.DeliveryOptions;
+import io.vertx.core.http.impl.headers.HeadersMultiMap;
+import io.vertx.mutiny.core.MultiMap;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -15,10 +18,9 @@ public class GreetingResource {
 
     @Inject
     EventBus eventbus;
-    
+
     //@RestClient
     //MyRestClient restclient;
-
     @GET
     @Path("/hello")
     @Produces(MediaType.TEXT_PLAIN)
@@ -43,7 +45,7 @@ public class GreetingResource {
         Message<String> result = eventbus.requestAndAwait("EB_backend", data);
         return result.body();
     }
-    
+
     ///---------------------AND THEN PAIN HAPPENS------------------------------
     @GET
     @Path("/login")
@@ -57,7 +59,7 @@ public class GreetingResource {
         eventbus.publish("EB_mylogger", "doLogin got status " + resp.resultStatus);
         return resp.data;
     }
-    
+
     @GET
     @Path("/logout")
     @Produces(MediaType.TEXT_PLAIN)
@@ -71,4 +73,24 @@ public class GreetingResource {
         return resp.data;
     }
 
+    @GET
+    @Path("/nodata")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String doNodata() {
+        Message<String> result = eventbus.requestAndAwait("nodata", null);
+        return result.body();
+    }
+    
+    @GET
+    @Path("/noreply")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String doNoreply() {
+        // Leker lite med headers här, men de är vert.x-specifika, så vi kan inte ta det med oss till
+        // Redis/Kafka misstänker jag.
+        // Om eventbussen har metadata så kan man där ange typ på event istället för att packa ihop en
+        // metaEntity med typ + data.
+        eventbus.send("nodata", null, new DeliveryOptions().addHeader("NORESPONSE", "true").addHeader("SENDER", "jonasf"));
+        return "NOREPLY";
+    }
+    
 }
