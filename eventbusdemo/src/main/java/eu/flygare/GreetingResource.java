@@ -1,5 +1,6 @@
 package eu.flygare;
 
+import io.smallrye.mutiny.Uni;
 import io.vertx.core.eventbus.DeliveryOptions;
 import io.vertx.core.http.impl.headers.HeadersMultiMap;
 import io.vertx.mutiny.core.MultiMap;
@@ -42,6 +43,7 @@ public class GreetingResource {
     public String doCallBackend(@QueryParam("data") String data) {
         //String response = restclient.doGetCall(String data);
         eventbus.publish("EB_mylogger", "Data for backend: " + data);
+        System.out.println("Data from web call: " + data);
         Message<String> result = eventbus.requestAndAwait("EB_backend", data);
         return result.body();
     }
