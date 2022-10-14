@@ -16,7 +16,7 @@ import org.jboss.logging.Logger;
  * @author flax
  */
 @ApplicationScoped
-public class BackendEmulator {
+public class  BackendEmulator {
     
     public static final Logger LOG = Logger.getLogger(BackendEmulator.class);
     
