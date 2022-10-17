@@ -45,6 +45,18 @@ public class BackendEmulator {
                     }
                     ).subscribe().with(foo -> {/* LOG IF NEEDED. It should be 1 (the Atomic in the start) */
                     });
+            Multi.createBy().repeating().uni(AtomicInteger::new, (x) -> redis.list(RequestEntity.class).blpop(Duration.ofSeconds(10), "requests")).indefinitely()
+                    .invoke((stuff) -> LOG.info("Got " + stuff.key + ":" + stuff.value))
+                    .map(KeyValue::value)
+                    //.invoke((stuff)-> LOG.info("Got " + stuff))
+                    .flatMap((replylist)
+                            -> {
+                        LOG.info("Got request " + replylist.requestId + " with user: " + replylist.name + " and fnurgel: " + replylist.fnurgel);
+                        ResponseEntity response = new ResponseEntity(replylist.requestId, 0, "OK", "THIS IS A RESPONSE TO QUERY " + replylist.requestId);
+                        return redis.list(ResponseEntity.class).rpush(replylist.requestId, response).toMulti();
+                    }
+                    ).subscribe().with(foo -> {/* LOG IF NEEDED. It should be 1 (the Atomic in the start) */
+                    });
         }
     }
 

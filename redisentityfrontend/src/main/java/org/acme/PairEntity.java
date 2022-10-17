@@ -15,4 +15,9 @@ public class PairEntity<K,V> {
     public K key;
     @JsonbProperty("value")
     public V value;
+    public PairEntity() {}
+    public PairEntity(K key, V value) {
+        this.key = key;
+        this.value = value;
+    }
 }
