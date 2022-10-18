@@ -4,16 +4,28 @@ import javax.json.bind.annotation.JsonbProperty;
 
 public class RequestEntity {
 
- @JsonbProperty("name")
- private String name;
- @JsonbProperty("age")
- private String age;
- @JsonbProperty("prefWeapon")
- private String prefWeapon;
- @JsonbProperty("specialAttack")
- private String specialAttack;
+    @JsonbProperty("requestId")
+    private String requestId;
+    @JsonbProperty("name")
+    private String name;
+    @JsonbProperty("specialAttack")
+    private String specialAttack;
 
- public RequestEntity(){}
+    public RequestEntity(String requestId, String name, String specialAttack) {
+        this.requestId = requestId;
+        this.name = name;
+        this.specialAttack = specialAttack;
+    }
+
+    public RequestEntity() {}
+
+    public String getRequestId() {
+        return requestId;
+    }
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
 
     public String getName() {
         return name;
@@ -21,22 +33,6 @@ public class RequestEntity {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
-
-    public String getPrefWeapon() {
-        return prefWeapon;
-    }
-
-    public void setPrefWeapon(String prefWeapon) {
-        this.prefWeapon = prefWeapon;
     }
 
     public String getSpecialAttack() {
