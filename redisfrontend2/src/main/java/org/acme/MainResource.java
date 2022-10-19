@@ -45,7 +45,7 @@ public class MainResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Uni<ResponseEntity> sendRequest(RequestEntity arg) {
+    public Uni<Long> sendRequest(RequestEntity arg) {
 
         // Make and set the request ID for the entity in question
         String requestId = arg.getName() + "_request" + idCounter;
@@ -65,7 +65,11 @@ public class MainResource {
         System.out.println("Received request: id=" + arg.getRequestId() + ", name=" + arg.getName() + ", specialAttack=" + arg.getSpecialAttack());
         System.out.println("Now pushing payload to REDIS...");
 
-        /* return requests.rpush("requests", arg).flatMap(response -> {
+        /*
+
+            THIS CODE is meant for when backend can "READ" your redis request, this will listen for a response
+
+        return requests.rpush("requests", arg).flatMap(response -> {
             System.out.println("Redis responded with: " + response + " will now listen for response...");
 
             // Attempts to listen for a response from a backend of some sort,
@@ -77,13 +81,15 @@ public class MainResource {
                     .onItem().ifNull().continueWith(new ResponseEntity());
         }); */
 
+        return requests.rpush("requests", arg);
 
+        /*
        requests.rpush("requests", arg).onItem().invoke((x) -> {
             System.out.println("rpush: " + x);
         });
 
         return Uni.createFrom().item(new ResponseEntity());
-
+        */
     }
 
 
