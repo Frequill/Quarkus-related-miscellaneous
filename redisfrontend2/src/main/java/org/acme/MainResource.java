@@ -38,17 +38,21 @@ public class MainResource {
 
 
     /**
-     Call attempt: curl -H "Content-Type: application/json" -H "Accepts: application/json" -X POST -d '{"name":"testUser", "specialAttack":"fireBreath"}' "http://localhost:8080/redis/sendRequest"
+     Call with: curl -H "Content-Type: application/json" -H "Accepts: application/json" -X POST -d '{"name":"testUser", "specialAttack":"fireBreath"}' "http://localhost:8080/redis/sendRequest"
+
+     This method creates a RequestEntity per user input in POST call. It then places said entity in a redis list called
+     "requests". It then waits for backend to respond by placing a respons in a new separate list with the same name
+     as the original request's ID. If found, this method will return the respons from redis that was sent from backend.
      */
 
     @Path("/sendRequest")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Uni<Long> sendRequest(RequestEntity arg) {
+    public Uni<ResponseEntity> sendRequest(RequestEntity arg) {
 
         // Make and set the request ID for the entity in question
-        String requestId = arg.getName() + "_request" + idCounter;
+        String requestId = arg.getName() + "_request" + idCounter.getAndIncrement();
         arg.setRequestId(requestId);
 
         // Make sure requests, responses and keys are retrieved from redis if they are null/has not yet been initialized
@@ -65,31 +69,21 @@ public class MainResource {
         System.out.println("Received request: id=" + arg.getRequestId() + ", name=" + arg.getName() + ", specialAttack=" + arg.getSpecialAttack());
         System.out.println("Now pushing payload to REDIS...");
 
-        /*
-
-            THIS CODE is meant for when backend can "READ" your redis request, this will listen for a response
 
         return requests.rpush("requests", arg).flatMap(response -> {
+
+            //              "response" here should be a 0 or a 1 depending on success or failure
             System.out.println("Redis responded with: " + response + " will now listen for response...");
 
-            // Attempts to listen for a response from a backend of some sort,
-            // but since no such backend exists will produce expected error for now
+            // Waits for 10 SECONDS to see if a list with the same name as the requestId pops up in redis from backend
             return responses.blpop(Duration.ofSeconds(10), requestId)
                     .onItem().ifNotNull()
                     .transform(KeyValue::value).invoke((ce) -> System.out.println("Response id: " + ce.requestId
                             + ", response = " + ce.response))
                     .onItem().ifNull().continueWith(new ResponseEntity());
-        }); */
-
-        return requests.rpush("requests", arg);
-
-        /*
-       requests.rpush("requests", arg).onItem().invoke((x) -> {
-            System.out.println("rpush: " + x);
         });
 
-        return Uni.createFrom().item(new ResponseEntity());
-        */
+        //return requests.rpush("requests", arg);
     }
 
 

@@ -1,34 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a1f22f1-d476-449c-b58b-99e2c66e9e3b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/src/main/docker/Dockerfile.jvm" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/src/main/docker/Dockerfile.jvm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/src/main/docker/Dockerfile.legacy-jar" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/src/main/docker/Dockerfile.legacy-jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/src/main/docker/Dockerfile.native" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/src/main/docker/Dockerfile.native" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/src/main/docker/Dockerfile.native-micro" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/src/main/docker/Dockerfile.native-micro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/src/main/java/org/acme/EventBusListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/src/main/java/org/acme/EventBusListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/src/main/java/org/acme/GreetingResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/src/main/java/org/acme/GreetingResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/src/main/java/org/acme/RequestEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/src/main/java/org/acme/RequestEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/src/main/resources/META-INF/resources/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/src/main/resources/META-INF/resources/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/src/test/java/org/acme/GreetingResourceIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/src/test/java/org/acme/GreetingResourceIT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/src/test/java/org/acme/GreetingResourceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/src/test/java/org/acme/GreetingResourceTest.java" afterDir="false" />
+    <list default="true" id="0a1f22f1-d476-449c-b58b-99e2c66e9e3b" name="Changes" comment="Re-commit of older code for redis frontend">
+      <change afterPath="$PROJECT_DIR$/redisBackend/lifecycle-quickstart/src/main/java/RequestEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redisBackend/lifecycle-quickstart/src/main/java/ResponseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redisBackend/lifecycle-quickstart/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/redisBackend/lifecycle-quickstart/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redisBackend/lifecycle-quickstart/src/main/java/LifeBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/redisBackend/lifecycle-quickstart/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/redisBackend/lifecycle-quickstart/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redisBackend/lifecycle-quickstart/src/main/java/RedisListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/redisBackend/lifecycle-quickstart/src/main/java/RedisListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redisBackend/lifecycle-quickstart/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/redisBackend/lifecycle-quickstart/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/redisfrontend2/src/main/java/org/acme/MainResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/src/main/java/org/acme/MainResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/redisfrontend2/target/build-metrics.json" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/target/build-metrics.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/target/classes/META-INF/resources/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/target/classes/META-INF/resources/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/target/classes/org/acme/EventBusListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/target/classes/org/acme/GreetingResource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/target/classes/org/acme/RequestEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/target/maven-status/maven-compiler-plugin/compile/null/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/target/maven-status/maven-compiler-plugin/compile/null/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/target/maven-status/maven-compiler-plugin/compile/null/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/target/maven-status/maven-compiler-plugin/compile/null/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/target/maven-status/maven-compiler-plugin/testCompile/null/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/target/maven-status/maven-compiler-plugin/testCompile/null/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/target/maven-status/maven-compiler-plugin/testCompile/null/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/target/maven-status/maven-compiler-plugin/testCompile/null/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/target/quarkus/bootstrap/test-app-model.dat" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/target/quarkus/bootstrap/test-app-model.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/target/test-classes/org/acme/GreetingResourceIT.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/redisfrontend2/target/test-classes/org/acme/GreetingResourceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/redisfrontend2/target/classes/org/acme/MainResource.class" beforeDir="false" afterPath="$PROJECT_DIR$/redisfrontend2/target/classes/org/acme/MainResource.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +21,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2G7erWf02Osyyf1x3OgjwRjxjfO" />
   <component name="ProjectViewState">
@@ -48,7 +35,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/julius/personalProjects/Quarkus-related-miscellaneous/redisfrontend2"
+    "last_opened_file_path": "/home/julius/personalProjects/Quarkus-related-miscellaneous/redisentitybackend"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -67,7 +54,16 @@
       <updated>1665744248189</updated>
       <workItem from="1665744249587" duration="33000" />
       <workItem from="1666100600295" duration="240000" />
+      <workItem from="1666251914435" duration="1562000" />
     </task>
+    <task id="LOCAL-00001" summary="Re-commit of older code for redis frontend">
+      <created>1666251967604</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666251967604</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,5 +79,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Re-commit of older code for redis frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Re-commit of older code for redis frontend" />
   </component>
 </project>
