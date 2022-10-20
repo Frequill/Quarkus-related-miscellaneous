@@ -6,57 +6,71 @@ package org.acme;
 
 import io.quarkus.redis.datasource.ReactiveRedisDataSource;
 import io.quarkus.redis.datasource.list.KeyValue;
+import io.quarkus.redis.datasource.list.ReactiveListCommands;
+import io.quarkus.runtime.Startup;
 import io.quarkus.vertx.ConsumeEvent;
 import io.smallrye.mutiny.Multi;
+import io.smallrye.mutiny.Uni;
 import java.time.Duration;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import javax.inject.Singleton;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.jboss.logging.Logger;
 
 /**
  *
  * @author flax
  */
-@ApplicationScoped
+@Startup
+@ApplicationScoped // Force creation on startup
 public class BackendEmulator {
 
     public static final Logger LOG = Logger.getLogger(BackendEmulator.class);
 
-    @Inject
-    ReactiveRedisDataSource redis;
+    ReactiveListCommands<String, RequestEntity> requests;
+    ReactiveListCommands<String, ResponseEntity> responses;
 
-    Boolean notstarted = true;
+    @ConfigProperty(name = "demo.backend.backendQueue", defaultValue = "requests")
+    String backendQueueName;
+    @ConfigProperty(name = "demo.backend.poptimeout", defaultValue = "10")
+    Long blpoptimeout;
 
-    @ConsumeEvent("backendinit")
-    public void StartBackendEmulator(String data) {
-        LOG.info("Backend got " + data + " notstarted=" + notstarted);
-        if (notstarted) {
-            notstarted = false;
-            Multi.createBy().repeating().uni(AtomicInteger::new, (x) -> redis.list(CommandEntity.class).blpop(Duration.ofSeconds(10), "tobackend")).indefinitely()
-                    .invoke((stuff) -> LOG.info("Got " + stuff.key + ":" + stuff.value))
-                    .map(KeyValue::value)
+    public BackendEmulator(ReactiveRedisDataSource ds) {
+
+        requests = ds.list(RequestEntity.class);
+        responses = ds.list(ResponseEntity.class);
+        LOG.info("Setting up list listener");
+        try {
+            Multi.createBy().repeating().uni(AtomicInteger::new, (x) -> {
+                try {
+                    return requests.blpop(Duration.ofSeconds(10), "requests");
+                } catch (Exception ex) {
+                    return null;
+                }
+            }).indefinitely()
+                    //.invoke((stuff) -> LOG.info("Got " + stuff.key + ":" + stuff.value))
+                    .map(KeyValue::value) // Get requestentity from KeyValue<queue name, request>
                     //.invoke((stuff)-> LOG.info("Got " + stuff))
-                    .flatMap((replylist)
+                    .flatMap((request) // Now Multi<ItemWithContext<RequestEntity>>
                             -> {
-                        LOG.info("Got request " + replylist.responseQueue + " with command " + replylist.command);
-                        CommandEntity response = new CommandEntity(replylist.responseQueue, "THIS IS A RESPONSE TO QUERY " + replylist.responseQueue, null);
-                        return redis.list(CommandEntity.class).rpush(replylist.responseQueue, response).toMulti();
+                        LOG.info("Got request " + request.requestId + " with user: " + request.name + " and fnurgel: " + request.fnurgel);
+                        // Create response
+                        ResponseEntity response = new ResponseEntity(request.requestId, 0, "OK", "THIS IS A RESPONSE TO QUERY " + request.requestId);
+                        // Push it back!
+                        return responses.rpush(request.requestId, response).toMulti();
                     }
-                    ).subscribe().with(foo -> {/* LOG IF NEEDED. It should be 1 (the Atomic in the start) */
-                    });
-            Multi.createBy().repeating().uni(AtomicInteger::new, (x) -> redis.list(RequestEntity.class).blpop(Duration.ofSeconds(10), "requests")).indefinitely()
-                    .invoke((stuff) -> LOG.info("Got " + stuff.key + ":" + stuff.value))
-                    .map(KeyValue::value)
-                    //.invoke((stuff)-> LOG.info("Got " + stuff))
-                    .flatMap((replylist)
-                            -> {
-                        LOG.info("Got request " + replylist.requestId + " with user: " + replylist.name + " and fnurgel: " + replylist.fnurgel);
-                        ResponseEntity response = new ResponseEntity(replylist.requestId, 0, "OK", "THIS IS A RESPONSE TO QUERY " + replylist.requestId);
-                        return redis.list(ResponseEntity.class).rpush(replylist.requestId, response).toMulti();
-                    }
-                    ).subscribe().with(foo -> {/* LOG IF NEEDED. It should be 1 (the Atomic in the start) */
-                    });
+                    )
+                    .subscribe().with(
+                            input -> {
+                                // Just drop these values... LOG.info("Stream input: " + input);
+                            },
+                            fail -> {
+                                LOG.info("Got exception from stream: " + fail.getMessage());
+                            }); 
+        } catch (Exception ex) {
+            LOG.info("Queue listener terminated by exception!");
         }
     }
 
