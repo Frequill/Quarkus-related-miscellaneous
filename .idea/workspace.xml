@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a1f22f1-d476-449c-b58b-99e2c66e9e3b" name="Changes" comment="Re-commit of older code for redis frontend">
+    <list default="true" id="0a1f22f1-d476-449c-b58b-99e2c66e9e3b" name="Changes" comment="Completed &quot;redisfrontend2&quot; and &quot;redisBackend&quot;! Now the frontend can send a request to redis is default port, the backend will find it, create a response based on it and then return said response to a NEW redis list by the same name as the original request's 'ID'. Frontend then reads this list and returns the result, fully ending the circle. &#10;&#10;FE -&gt; Redis -&gt; BE -&gt; Redis -&gt; FE">
       <change afterPath="$PROJECT_DIR$/redisBackend/lifecycle-quickstart/src/main/java/RequestEntity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/redisBackend/lifecycle-quickstart/src/main/java/ResponseEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -35,7 +35,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/julius/personalProjects/Quarkus-related-miscellaneous/redisentitybackend"
+    "last_opened_file_path": "/home/julius/personalProjects/Quarkus-related-miscellaneous"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -54,7 +54,7 @@
       <updated>1665744248189</updated>
       <workItem from="1665744249587" duration="33000" />
       <workItem from="1666100600295" duration="240000" />
-      <workItem from="1666251914435" duration="1562000" />
+      <workItem from="1666251914435" duration="1687000" />
     </task>
     <task id="LOCAL-00001" summary="Re-commit of older code for redis frontend">
       <created>1666251967604</created>
@@ -63,7 +63,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666251967604</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Completed &quot;redisfrontend2&quot; and &quot;redisBackend&quot;! Now the frontend can send a request to redis is default port, the backend will find it, create a response based on it and then return said response to a NEW redis list by the same name as the original request's 'ID'. Frontend then reads this list and returns the result, fully ending the circle. &#10;&#10;FE -&gt; Redis -&gt; BE -&gt; Redis -&gt; FE">
+      <created>1666268282655</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666268282655</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -82,6 +89,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Re-commit of older code for redis frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Re-commit of older code for redis frontend" />
+    <MESSAGE value="Completed &quot;redisfrontend2&quot; and &quot;redisBackend&quot;! Now the frontend can send a request to redis is default port, the backend will find it, create a response based on it and then return said response to a NEW redis list by the same name as the original request's 'ID'. Frontend then reads this list and returns the result, fully ending the circle. &#10;&#10;FE -&gt; Redis -&gt; BE -&gt; Redis -&gt; FE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed &quot;redisfrontend2&quot; and &quot;redisBackend&quot;! Now the frontend can send a request to redis is default port, the backend will find it, create a response based on it and then return said response to a NEW redis list by the same name as the original request's 'ID'. Frontend then reads this list and returns the result, fully ending the circle. &#10;&#10;FE -&gt; Redis -&gt; BE -&gt; Redis -&gt; FE" />
   </component>
 </project>
