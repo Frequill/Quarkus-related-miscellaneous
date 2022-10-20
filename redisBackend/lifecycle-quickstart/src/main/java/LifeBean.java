@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 @ApplicationScoped
 public class LifeBean {
-    private static final Logger logger = Logger.getLogger("ListenerBean");
+    private static final Logger logger = Logger.getLogger("LifeBean");
 
     void onStart(@Observes StartupEvent event) {
         logger.info("Starting the app...");
