@@ -23,7 +23,7 @@ public class QuotesProcessor {
     @Outgoing("quotes")
     @Blocking
     public Quote process(String quoteRequest) throws InterruptedException {
-        // simulate some hard working task
+        // simulate some hardworking task
         Thread.sleep(200);
         return new Quote(quoteRequest, random.nextInt(100));
     }
