@@ -1,42 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a1f22f1-d476-449c-b58b-99e2c66e9e3b" name="Changes" comment="Renamed obsolete project to... Obsolete...">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-processor/.dockerignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-processor/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-processor/.mvn/wrapper/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-processor/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-processor/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-processor/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-processor/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-processor/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-processor/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-processor/src/main/docker/Dockerfile.jvm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-processor/src/main/docker/Dockerfile.legacy-jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-processor/src/main/docker/Dockerfile.native" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-processor/src/main/docker/Dockerfile.native-micro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-processor/src/main/java/org/acme/kafka/model/Quote.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-processor/src/main/java/org/acme/kafka/processor/QuotesProcessor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-processor/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-producer/.dockerignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-producer/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-producer/.mvn/wrapper/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-producer/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-producer/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-producer/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-producer/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-producer/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-producer/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-producer/src/main/docker/Dockerfile.jvm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-producer/src/main/docker/Dockerfile.legacy-jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-producer/src/main/docker/Dockerfile.native" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-producer/src/main/docker/Dockerfile.native-micro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-producer/src/main/java/org/acme/kafka/model/Quote.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-producer/src/main/java/org/acme/kafka/producer/QuotesResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-producer/src/main/resources/META-INF/resources/quotes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafkaProducerAndProcessor-secondAttempt/kafka-quickstart-producer/src/main/resources/application.properties" beforeDir="false" />
-    </list>
+    <list default="true" id="0a1f22f1-d476-449c-b58b-99e2c66e9e3b" name="Changes" comment="Finally finished kafka-producer and kafka-processor! They can be located in repoDirectory &quot;kafkaProducerAndProcessor-secondAttempt&quot;&#10;&#10;All works now, they can be run in docker alongside a kafka-node to do all communication between producer and processor through Kafka!" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,7 +28,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/julius/personalProjects/Quarkus-related-miscellaneous/kafka-producer-and-processor-second-attempt/kafka-quickstart-producer"
+    "last_opened_file_path": "/home/julius/personalProjects/Quarkus-related-miscellaneous"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -84,6 +49,7 @@
       <workItem from="1666100600295" duration="240000" />
       <workItem from="1666251914435" duration="2495000" />
       <workItem from="1666688028432" duration="2427000" />
+      <workItem from="1666705402052" duration="137000" />
     </task>
     <task id="LOCAL-00001" summary="Re-commit of older code for redis frontend">
       <created>1666251967604</created>
@@ -134,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666693978750</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Finally finished kafka-producer and kafka-processor! They can be located in repoDirectory &quot;kafkaProducerAndProcessor-secondAttempt&quot;&#10;&#10;All works now, they can be run in docker alongside a kafka-node to do all communication between producer and processor through Kafka!">
+      <created>1666705527595</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1666705527595</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +129,7 @@
     <MESSAGE value="Completed &quot;redisfrontend2&quot; and &quot;redisBackend&quot;! Now the frontend can send a request to redis is default port, the backend will find it, create a response based on it and then return said response to a NEW redis list by the same name as the original request's 'ID'. Frontend then reads this list and returns the result, fully ending the circle. &#10;&#10;FE -&gt; Redis -&gt; BE -&gt; Redis -&gt; FE" />
     <MESSAGE value="Separated STUPID non-functional code. There are now two separate KAFKA-producer-and-processor directories here. The first one is obsolete, the second one I remade from scratch and managed to get it working." />
     <MESSAGE value="Renamed obsolete project to... Obsolete..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Renamed obsolete project to... Obsolete..." />
+    <MESSAGE value="Finally finished kafka-producer and kafka-processor! They can be located in repoDirectory &quot;kafkaProducerAndProcessor-secondAttempt&quot;&#10;&#10;All works now, they can be run in docker alongside a kafka-node to do all communication between producer and processor through Kafka!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finally finished kafka-producer and kafka-processor! They can be located in repoDirectory &quot;kafkaProducerAndProcessor-secondAttempt&quot;&#10;&#10;All works now, they can be run in docker alongside a kafka-node to do all communication between producer and processor through Kafka!" />
   </component>
 </project>
