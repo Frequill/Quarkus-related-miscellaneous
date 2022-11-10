@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a1f22f1-d476-449c-b58b-99e2c66e9e3b" name="Changes" comment="Added directory &quot;Quarkus-kafkaStreams-concept&quot; which contains a finished &quot;basic&quot; project and an advanced work in progress that thus far is empty but will be the foundation for a much more in-depth Quarkus project that uses Kafka Streams to its fullest.&#10;(There's also some nice markdown there containing useful notes and stuff I found smart/good-to-know)">
-      <change afterPath="$PROJECT_DIR$/Quarkus-kafkaStreams-concept/advanced-streams-and-kafka-features-project/streams/src/main/notes.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quarkus-kafkaStreams-concept/advanced-streams-and-kafka-features-project/streamsProject/src/main/notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/Quarkus-kafkaStreams-concept/advanced-streams-and-kafka-features-project/streamsProject/src/main/notes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Quarkus-kafkaStreams-concept/advanced-streams-and-kafka-features-project/streamsProject/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Quarkus-kafkaStreams-concept/advanced-streams-and-kafka-features-project/streamsProject/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +30,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/julius/personalProjects/Quarkus-related-miscellaneous"
+    "last_opened_file_path": "/home/julius/personalProjects/Quarkus-related-miscellaneous/Quarkus-kafkaStreams-concept/advanced-streams-and-kafka-features-project/streamsProject"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -61,7 +58,9 @@
       <workItem from="1666769853744" duration="22000" />
       <workItem from="1667826258878" duration="1489000" />
       <workItem from="1667912666439" duration="24000" />
-      <workItem from="1667913902601" duration="775000" />
+      <workItem from="1667913902601" duration="1379000" />
+      <workItem from="1668000678871" duration="52000" />
+      <workItem from="1668000731813" duration="65000" />
     </task>
     <task id="LOCAL-00001" summary="Re-commit of older code for redis frontend">
       <created>1666251967604</created>

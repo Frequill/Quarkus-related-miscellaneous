@@ -5,6 +5,7 @@ import javax.enterprise.inject.Produces;
 
 import Entities.Movie;
 import Entities.MoviePlayed;
+import Logic.MoviePlayCount;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.KeyValue;
 import org.apache.kafka.streams.StreamsBuilder;
@@ -12,12 +13,16 @@ import org.apache.kafka.streams.Topology;
 import org.apache.kafka.streams.kstream.*;
 
 import io.quarkus.kafka.client.serialization.ObjectMapperSerde;
+import org.apache.kafka.streams.state.KeyValueBytesStoreSupplier;
+import org.apache.kafka.streams.state.Stores;
 
 @ApplicationScoped
 public class TopologyProducer {
 
     private static final String MOVIES_TOPIC = "movies";
     private static final String PLAY_MOVIES_TOPIC = "play-time-movies";
+    public static final String COUNT_MOVIE_STORE = "countMovieStore";
+    KeyValueBytesStoreSupplier storeSupplier = Stores.persistentKeyValueStore(COUNT_MOVIE_STORE);
 
     @Produces
     public Topology getTopCharts() {
@@ -28,6 +33,7 @@ public class TopologyProducer {
         // SerDes for Movie, PlayedMovie and moviePlayCount
         final ObjectMapperSerde<Movie> movieSerde = new ObjectMapperSerde<>(Movie.class);
         final ObjectMapperSerde<MoviePlayed> moviePlayedSerde = new ObjectMapperSerde<>(MoviePlayed.class);
+        final ObjectMapperSerde<MoviePlayCount> moviePlayCountSerde = new ObjectMapperSerde<>(MoviePlayCount.class);
 
 
         // Creation of a Global Kafka Table for Movies topic
@@ -54,8 +60,20 @@ public class TopologyProducer {
                 */
 
                 .map((key, value) -> KeyValue.pair(value.id, value)) // Now key is the id field
+
+                // This is the join call seen before, where key is the movie id and value is the movie
                 .join(moviesTable, (movieId, moviePlayedId) -> movieId, (moviePlayed, movie) -> movie)
-                .print(Printed.toSysOut());
+                // Group events per key, in this case movie id
+                .groupByKey(Grouped.with(Serdes.Integer(), movieSerde))
+                // Aggregate method gets the MoviePlayCount object if already created (if not it creates it) and calls its aggregate method to increment by one the viwer counter
+                .aggregate(MoviePlayCount::new,
+                        (movieId, movie, moviePlayCounter) -> moviePlayCounter.aggregate(movie.name),
+                        Materialized.<Integer, MoviePlayCount> as(storeSupplier)
+                                .withKeySerde(Serdes.Integer())
+                                .withValueSerde(moviePlayCountSerde)
+                )
+                .toStream()
+                .print(Printed.toSysOut()); // Hopefully this will help print the result!
         return builder.build();
 
         // Had some issues with serialization and de-serialization so, I chickened out and made it print individual attributes.

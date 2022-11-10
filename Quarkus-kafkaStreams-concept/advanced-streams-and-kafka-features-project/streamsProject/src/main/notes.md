@@ -16,6 +16,13 @@ single record added to the topic into this Multi and turn it into a type of list
 This way, you can easily save the contents of a kafka topic programmatically without  
 having to tell the application to update it as that is done automagically!
 
+2. I could be doing something wrong here so take this with a grain of salt...
+but applications running logic for Kafka Streams seems to dislike the idea of hot coding.
+In my experience it's smart to kill the application before editing sourcecode.
+
+3. Not only can a stream record be printed with "print(Printed.toSysOut())",
+but you can also send the result to another Kafka Topic with ".to("topicName", logic)"
+
 # Notes
 1. A "Source processor" represents a Kafka topic. It sends the events
 to other stream processors (one or multiple)
