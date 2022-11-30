@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a1f22f1-d476-449c-b58b-99e2c66e9e3b" name="Changes" comment="Added directory &quot;Quarkus-kafkaStreams-concept&quot; which contains a finished &quot;basic&quot; project and an advanced work in progress that thus far is empty but will be the foundation for a much more in-depth Quarkus project that uses Kafka Streams to its fullest.&#10;(There's also some nice markdown there containing useful notes and stuff I found smart/good-to-know)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0a1f22f1-d476-449c-b58b-99e2c66e9e3b" name="Changes" comment="All features that I wanted now function as intended in the advanced-streams-and-kafka-features-project FOUND IN Quarkus-kafkaStreams-concept dir.&#10;&#10;Programs FUNCTION in DEV MODE but streams project does produce an annoying warning/error or two. Nothing major since all functionality does exactly what I intended for them to do... but it's NOT a flawless application - developer is aware, calm down." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,14 +23,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/julius/personalProjects/Quarkus-related-miscellaneous/Quarkus-kafkaStreams-concept/advanced-streams-and-kafka-features-project/streamsProject"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/julius/personalProjects/Quarkus-related-miscellaneous/Quarkus-kafkaStreams-concept/advanced-streams-and-kafka-features-project/streamsProject&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -61,6 +59,7 @@
       <workItem from="1667913902601" duration="1379000" />
       <workItem from="1668000678871" duration="52000" />
       <workItem from="1668000731813" duration="65000" />
+      <workItem from="1668082696530" duration="165000" />
     </task>
     <task id="LOCAL-00001" summary="Re-commit of older code for redis frontend">
       <created>1666251967604</created>
@@ -139,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667914063488</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="All features that I wanted now function as intended in the advanced-streams-and-kafka-features-project FOUND IN Quarkus-kafkaStreams-concept dir.&#10;&#10;Programs FUNCTION in DEV MODE but streams project does produce an annoying warning/error or two. Nothing major since all functionality does exactly what I intended for them to do... but it's NOT a flawless application - developer is aware, calm down.">
+      <created>1668082836867</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1668082836867</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +171,7 @@
     <MESSAGE value="Small fixes, some bugs are gone!" />
     <MESSAGE value="Added the &quot;kafkaStreamsTestProject&quot; to misc repo. It contains a producer and an aggregator project that can be launched with docker compose to initiate a kafka network (A fully functional yml file can be found inside folder, all one needs to do to test functionality is rename the images to what you have saved the producer and aggregators as, as docker containers)" />
     <MESSAGE value="Added directory &quot;Quarkus-kafkaStreams-concept&quot; which contains a finished &quot;basic&quot; project and an advanced work in progress that thus far is empty but will be the foundation for a much more in-depth Quarkus project that uses Kafka Streams to its fullest.&#10;(There's also some nice markdown there containing useful notes and stuff I found smart/good-to-know)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added directory &quot;Quarkus-kafkaStreams-concept&quot; which contains a finished &quot;basic&quot; project and an advanced work in progress that thus far is empty but will be the foundation for a much more in-depth Quarkus project that uses Kafka Streams to its fullest.&#10;(There's also some nice markdown there containing useful notes and stuff I found smart/good-to-know)" />
+    <MESSAGE value="All features that I wanted now function as intended in the advanced-streams-and-kafka-features-project FOUND IN Quarkus-kafkaStreams-concept dir.&#10;&#10;Programs FUNCTION in DEV MODE but streams project does produce an annoying warning/error or two. Nothing major since all functionality does exactly what I intended for them to do... but it's NOT a flawless application - developer is aware, calm down." />
+    <option name="LAST_COMMIT_MESSAGE" value="All features that I wanted now function as intended in the advanced-streams-and-kafka-features-project FOUND IN Quarkus-kafkaStreams-concept dir.&#10;&#10;Programs FUNCTION in DEV MODE but streams project does produce an annoying warning/error or two. Nothing major since all functionality does exactly what I intended for them to do... but it's NOT a flawless application - developer is aware, calm down." />
   </component>
 </project>
